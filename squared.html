@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewprot" content="width=device-width, intial-scale=1.0">
-        <title>분야선택 넓이</title>
+        <title>분야선택 곱셈공식</title>
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({            
             tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}            
@@ -16,8 +16,7 @@
 </head>
 <body>
     <font-family: 'Ownglyph_ParkDaHyun', sans-serif;>
-    <h1 class="title">분야 선택-넓이</h1>
-    <p>분수 나타내기 $\frac{2}{4} = \frac{1}{2}$</p>
+    <h1 class="title">곱셈공식</h1>
   
    <div class="navi">
     <div class="container2">
@@ -35,13 +34,13 @@ const boxes = document.querySelectorAll('.boxfox');
 
 // 박스별 원래 글씨와 클릭 시 변경될 글씨를 매핑
 const textMap = {
-    "제곱공식": "(a + b)^2 = a^2 + 2ab + b^2",
-    "제곱공식": "(a - b)^2 = a^2 - 2ab + b^2",
-    "세제곱 공식": "a^3 + b^3 = (a + b)(a^2 - ab + b^2)",
-    "세제곱 공식": "a^3 - b^3 = (a - b)(a^2 + ab + b^2)",
-    "근의공식: ": "$\frac{-b\pm \sqrt{b^{2}-4ac}}{2a}$",
-    "짝수 근의 공식": "\frac{-2p \pm \sqrt{(2p)^2 - 4ac}}{2a}",
-    "근과 계수와의 공식": "ax^2+bx+c 이고 두 근이 α,β일 때  α+β=$\frac{-b}{a} αβ=\frac{c}{a}$"
+    "제곱공식": "$$ (a + b)^2 = a^2 + 2ab + b^2 $$",
+    "제곱공식": "$$ (a - b)^2 = a^2 - 2ab + b^2 $$",
+    "세제곱 공식": "$$ a^3 + b^3 = (a + b)(a^2 - ab + b^2) $$",
+    "세제곱 공식": "$$ a^3 - b^3 = (a - b)(a^2 + ab + b^2) $$",
+    "근의공식" : "$$ \\frac{-b\\pm \\sqrt{b^{2}-4ac}}{2a} $$",
+    "짝수 근의 공식": "$$ \\frac{-2b \\pm \\sqrt{(2b)^2 - 4ac}}{2a} $$",
+    "근과 계수와의 공식": "$$ ax^2+bx+c 이고 두 근이 α,β일 때  α+β=$\\frac{-b}{a} αβ=\\frac{c}{a} $$"
 
 };
 
