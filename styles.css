@@ -85,23 +85,18 @@ body {
 .boxfox a:active{
     display: block;
     font size: 14px;
-    color: #000;
+    color: #000000;
     padding: 10px;
     text-align: center;
-    background-color: #f00;
+    background-color: #f00000;
 }
 
-.navi ul li{
-    float: left;
-    width: 150px;
-    padding: 10px;
-}
 
 .navi a.active{
     display: block;
     font size: 14px;
-    color: #000;
+    color: #000000;
     padding: 10px;
     text-align: center;
-    background-color: #f00;
+    background-color: #f00000;
 }

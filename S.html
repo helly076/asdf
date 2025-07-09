@@ -17,36 +17,50 @@
 <body>
     <font-family: 'Ownglyph_ParkDaHyun', sans-serif;>
     <h1 class="title">분야 선택-넓이</h1>
-  <div class="container2">
-    <div class="boxfox">갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉갉</div>
-    <div class="boxfox">222</div>
-    <div class="boxfox">333</div>
-    <div class="boxfox">444</div>
-
-    <div class="navi">
+  
+   <div class="navi">
+    <div class="container2">
       <a href="#" class="boxfox">삼각형</a>
       <a href="#" class="boxfox">사각형</a>
+      <a href="#" class="boxfox">원</a>
+      <a href="#" class="boxfox">원</a>
+      <a href="#" class="boxfox">원</a>
       <a href="#" class="boxfox">원</a>
     </div>
 
   </div>
   <script>
-    document.querySelectorAll('.navi a').forEach(item => {
-    item.addEventListener('click', function(e) {
-        e.preventDefault(); // 링크 이동 방지
+const boxes = document.querySelectorAll('.boxfox');
 
-        // 이미 active 상태이면 해제
+// 박스별 원래 글씨와 클릭 시 변경될 글씨를 매핑
+const textMap = {
+    "사각형": "네모 선택됨",
+    "삼각형": "세모 선택됨",
+    "원": "동그라미 선택됨"
+};
+
+boxes.forEach(box => {
+    box.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        this.classList.toggle('active');
+
         if (this.classList.contains('active')) {
-            this.classList.remove('active');
+            // 클릭 시 변경될 글씨로 변경
+            this.textContent = textMap[this.textContent] || this.textContent;
         } else {
-            // 다른 항목들의 active 해제
-            document.querySelectorAll('.navi a').forEach(link => link.classList.remove('active'));
-            // 클릭한 항목에 active 추가
-            this.classList.add('active');
+            // 다시 클릭 시 원래 글씨로 되돌리기 위해 역으로 찾아야 함
+            for (const [original, changed] of Object.entries(textMap)) {
+                if (this.textContent === changed) {
+                    this.textContent = original;
+                    break;
+                }
+            }
         }
-      });
     });
+});
 </script>
+
 
 </body>
 </html>
