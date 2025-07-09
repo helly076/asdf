@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewprot" content="width=device-width, intial-scale=1.0">
+        <title>분야선택 곱셈공식</title>
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({            
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}            
+        });
+        
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <font-family: 'Ownglyph_ParkDaHyun', sans-serif;>
+    <h1 class="title">곱셈공식</h1>
+  
+   <div class="navi">
+    <div class="container2">
+      <a href="#" class="boxfox">제곱공식1</a>
+      <a href="#" class="boxfox">제곱공식2</a>
+      <a href="#" class="boxfox">세제곱 공식</a>
+      <a href="#" class="boxfox">근의공식</a>
+      <a href="#" class="boxfox">짝수 근의 공식</a>
+      <a href="#" class="boxfox">근과 계수와의 공식</a>
+    </div>
+
+  </div>
+  <script>
+const boxes = document.querySelectorAll('.boxfox');
+
+// 박스별 원래 글씨와 클릭 시 변경될 글씨를 매핑
+const textMap = {
+    "제곱공식1": "$$ (a + b)^2 = a^2 + 2ab + b^2 $$",
+    "제곱공식2": "$$ (a - b)^2 = a^2 - 2ab + b^2 $$",
+    "세제곱 공식": "$$ a^3 + b^3 = (a + b)(a^2 - ab + b^2) $$",
+    "세제곱 공식": "$$ a^3 - b^3 = (a - b)(a^2 + ab + b^2) $$",
+    "근의공식" : "$$ \\frac{-b\\pm \\sqrt{b^{2}-4ac}}{2a} $$",
+    "짝수 근의 공식": "$$ \\frac{-\\frac{b}{2} \\pm \\sqrt{(\\frac{b}{2})^2 - 4ac}}{a} $$",
+    "근과 계수와의 공식": "$$ ax^2+bx+c 이고 두 근이 α,β일 때  α+β=\\frac{-b}{a} αβ=\\frac{c}{a} $$"
+
+};
+
+boxes.forEach(box => {
+    // 박스에 원래 텍스트를 data-original에 저장
+    box.dataset.original = box.textContent.trim();
+
+
+    box.addEventListener('click', function(e) {
+        e.preventDefault();
+
+
+        this.classList.toggle('active');
+
+
+        if (this.classList.contains('active')) {
+            // active가 켜지면 textMap의 수식(또는 문자열)로 변경
+            const originalText = this.dataset.original;
+            this.innerHTML = textMap[originalText] || originalText;
+        } else {
+            // active가 꺼지면 원래 텍스트로 되돌림
+            this.textContent = this.dataset.original;
+        }
+
+
+        // MathJax 렌더링
+        if (window.MathJax) {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, this]);
+        }
+    });
+}
+
+);
+</script>
+
+
+</body>
+</html>
