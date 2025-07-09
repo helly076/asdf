@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewprot" content="width=device-width, intial-scale=1.0">
+        <title>분야선택 수열</title>
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({            
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}            
+        });
+        
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <font-family: 'Ownglyph_ParkDaHyun', sans-serif;>
+    <h1 class="title">수열</h1>
+  
+   <div class="navi">
+    <div class="container2">
+      <a href="#" class="boxfox">등차수열 일반항</a>
+      <a href="#" class="boxfox">등차수열 합</a>
+      <a href="#" class="boxfox">등비수열 일반항</a>
+      <a href="#" class="boxfox">등비수열 합</a>
+    </div>
+
+  </div>
+
+  <script>
+const boxes = document.querySelectorAll('.boxfox');
+
+const textMap = {
+    "등차수열 일반항": "$$ a+(n-1)d $$",
+    "등차수열 합": "$$ n -> \\frac{n(n+1)}{2} n^2 \\frac{n(n+1)(2n+1)}{6} n^3 \left ( \frac{n(n+1)}{2} \right )^{2}$$",
+    "등비수열 일반항": "$$ a^{n-1} $$",
+    "등비수열 합": "$$ \\frac{a(r^{n}-1)}{r-1} \\frac{a(1-r^{n})}{1-r} $$",
+
+};
+
+boxes.forEach(box => {
+    // 박스에 원래 텍스트를 data-original에 저장
+    box.dataset.original = box.textContent.trim();
+
+    box.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        this.classList.toggle('active');
+
+        if (this.classList.contains('active')) {
+            // active가 켜지면 textMap의 수식(또는 문자열)로 변경
+            const originalText = this.dataset.original;
+            this.innerHTML = textMap[originalText] || originalText;
+        } else {
+            // active가 꺼지면 원래 텍스트로 되돌림
+            this.textContent = this.dataset.original;
+        }
+
+        // MathJax 렌더링
+        if (window.MathJax) {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, this]);
+        }
+    });
+});
+</script>
+
+
+
+</body>
+</html>
