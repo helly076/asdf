@@ -30,7 +30,7 @@ body {
   background-color: empty;
   color: #5f80c3;
   text-align: center;
-  font-size: 50px;
+  font-size: 65px;
   z-index: 1000;
   padding-top: 150px;
   margin-bottom: 30px;
@@ -48,7 +48,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 40px;
+  font-size: 50px;
   text-decoration: none;
   color: black;
   cursor: pointer;
@@ -73,7 +73,8 @@ body {
     display: block;
     text-align: center;
     line-height: 100px;
-    color : black;
+    color : black; : 40px
+    font size : 40px
 }
 
 .container2 {
@@ -85,7 +86,7 @@ body {
 
 .boxfox a:active{
     display: block;
-    font size: 14px;
+    font size: 20px;
     color: light gray;
     padding: 10px;
     text-align: center;
@@ -95,7 +96,7 @@ body {
 
 .navi a.active{
     display: block;
-    font size: 14px;
+    font size: 20px;
     color: light gray;
     padding: 10px;
     text-align: center;
