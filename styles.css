@@ -86,7 +86,7 @@ body {
 .boxfox a:active{
     display: block;
     font size: 14px;
-    color: #000000;
+    color: emtpy;
     padding: 10px;
     text-align: center;
     background-color: empty;
@@ -96,7 +96,7 @@ body {
 .navi a.active{
     display: block;
     font size: 14px;
-    color: #000000;
+    color: empty;
     padding: 10px;
     text-align: center;
     background-color: empty;
