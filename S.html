@@ -17,49 +17,64 @@
 <body>
     <font-family: 'Ownglyph_ParkDaHyun', sans-serif;>
     <h1 class="title">분야 선택-넓이</h1>
+    <p>분수 나타내기 $\frac{2}{4} = \frac{1}{2}$</p>
   
    <div class="navi">
     <div class="container2">
-      <a href="#" class="boxfox">삼각형</a>
-      <a href="#" class="boxfox">사각형</a>
-      <a href="#" class="boxfox">원</a>
-      <a href="#" class="boxfox">원</a>
-      <a href="#" class="boxfox">원</a>
-      <a href="#" class="boxfox">원</a>
+      <a href="#" class="boxfox">사각형 넓이</a>
+      <a href="#" class="boxfox">삼각형 넓이</a>
+      <a href="#" class="boxfox">마름모 넓이</a>
+      <a href="#" class="boxfox">사다리꼴 넓이</a>
+      <a href="#" class="boxfox">원 넓이</a>
+      <a href="#" class="boxfox">원기둥 겉넓이</a>
+      <a href="#" class="boxfox">원뿔 겉넓이</a>
+       <a href="#" class="boxfox">구의 겉넓이</a>
+
     </div>
 
   </div>
+
   <script>
 const boxes = document.querySelectorAll('.boxfox');
 
-// 박스별 원래 글씨와 클릭 시 변경될 글씨를 매핑
 const textMap = {
-    "사각형": "네모 선택됨",
-    "삼각형": "세모 선택됨",
-    "원": "동그라미 선택됨"
+    "사각형 넓이": "밑변 x 높이",
+    "삼각형 넓이": "밑변 x 높이 x \frac{1}{2}",
+    "마름모 넓이": "$A = \frac{1}{2} d_1 d_2$",
+    "사다리꼴 넓이": "\\(\\frac{2}{4} = \\frac{1}{2}\\)",
+    "원 넓이": "$Pi r^{2}$",
+    "원기둥 겉넓이": "\\(\\frac{2}{4} = \\frac{1}{2}\\)",
+    "원뿔 겉넓이": "\\(\\frac{2}{4} = \\frac{1}{2}\\)",
+    "구의 겉넓이": "\\(\\frac{2}{4} = \\frac{1}{2}\\)",
+
 };
 
 boxes.forEach(box => {
+    // 박스에 원래 텍스트를 data-original에 저장
+    box.dataset.original = box.textContent.trim();
+
     box.addEventListener('click', function(e) {
         e.preventDefault();
 
         this.classList.toggle('active');
 
         if (this.classList.contains('active')) {
-            // 클릭 시 변경될 글씨로 변경
-            this.textContent = textMap[this.textContent] || this.textContent;
+            // active가 켜지면 textMap의 수식(또는 문자열)로 변경
+            const originalText = this.dataset.original;
+            this.innerHTML = textMap[originalText] || originalText;
         } else {
-            // 다시 클릭 시 원래 글씨로 되돌리기 위해 역으로 찾아야 함
-            for (const [original, changed] of Object.entries(textMap)) {
-                if (this.textContent === changed) {
-                    this.textContent = original;
-                    break;
-                }
-            }
+            // active가 꺼지면 원래 텍스트로 되돌림
+            this.textContent = this.dataset.original;
+        }
+
+        // MathJax 렌더링
+        if (window.MathJax) {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, this]);
         }
     });
 });
 </script>
+
 
 
 </body>
