@@ -89,7 +89,7 @@ body {
     color: #000000;
     padding: 10px;
     text-align: center;
-    background-color: #f00000;
+    background-color: empty;
 }
 
 
@@ -99,5 +99,5 @@ body {
     color: #000000;
     padding: 10px;
     text-align: center;
-    background-color: #f00000;
+    background-color: empty;
 }
