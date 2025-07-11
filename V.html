@@ -40,7 +40,6 @@ const textMap = {
 };
 
 boxes.forEach(box => {
-    // 박스에 원래 텍스트를 data-original에 저장
     box.dataset.original = box.textContent.trim();
 
     box.addEventListener('click', function(e) {
@@ -49,15 +48,12 @@ boxes.forEach(box => {
         this.classList.toggle('active');
 
         if (this.classList.contains('active')) {
-            // active가 켜지면 textMap의 수식(또는 문자열)로 변경
             const originalText = this.dataset.original;
             this.innerHTML = textMap[originalText] || originalText;
         } else {
-            // active가 꺼지면 원래 텍스트로 되돌림
             this.textContent = this.dataset.original;
         }
 
-        // MathJax 렌더링
         if (window.MathJax) {
             MathJax.Hub.Queue(["Typeset", MathJax.Hub, this]);
         }
