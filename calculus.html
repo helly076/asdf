@@ -17,6 +17,12 @@
 <body>
     <font-family: 'Ownglyph_ParkDaHyun', sans-serif;>
     <h1 class="title">미적분</h1>
+     <p>\( \int x^n dx = \frac{x^{n+1}}{n+1} + C \) (단, \( n \neq -1 \))</p>
+      <p>\( \int e^x dx = e^x + C \)</p>
+      <p>\( \int \frac{1}{x} dx = \ln|x| + C \)</p>
+      <p>\( (x^n)' = nx^{n-1} \)</p>
+      <p>\( (fg)' = f'g + fg' \)</p>
+      <p>\( (f/g)' = \frac{f'g - fg'}{g^2} \)</p>
   
    <div class="navi">
     <div class="container2">
@@ -24,9 +30,9 @@
       <a href="#" class="boxfox">지수함수 미분</a>
       <a href="#" class="boxfox">삼각함수 미분</a>
       <a href="#" class="boxfox">덧셈정리</a>
-      <a href="#" class="boxfox">로그함수 미분</a>
-      <a href="#" class="boxfox">지수함수 미분</a>
-      <a href="#" class="boxfox">삼각함수 미분</a>
+      <a href="#" class="boxfox">로그함수 적분</a>
+      <a href="#" class="boxfox">지수함수 적분</a>
+      <a href="#" class="boxfox">삼각함수 적분</a>
       <a href="#" class="boxfox">부분적분</a>
 
     </div>
@@ -34,17 +40,15 @@
   </div>
   <script>
 const boxes = document.querySelectorAll('.boxfox');
-
-// 박스별 원래 글씨와 클릭 시 변경될 글씨를 매핑
 const textMap = {
     "로그함수 미분": "$$ \\frac{d}{dx} (\\log_a x) = \\frac{1}{x \\ln a}\\quad \\text{특히 } \\frac{d}{dx} (\\ln x) = \\frac{1}{x} $$",
     "지수함수 미분": "$$ \\frac{d}{dx} (a^x) = a^x \\ln a\\quad \\text{특히 } \\frac{d}{dx}(e^x) = e^x$$",
-    "삼각함수 미분": "$$ $$",
-    "덧셈정리": "$$  $$",
-    "로그함수 적분" : "$$ $$",
-    "지수함수 적분": "$$  $$",
-    "삼각함수 적분": "$$ $$",
-    "부분적분": "$$  $$",
+    "삼각함수 미분": "$$ \\frac{d}{dx}(\\sin  = \\cos x, \\quad \\frac{d}{dx}(\\cos x) = -\\sin x, \\quad \\frac{d}{dx}(\\tan x) = \\sec^2 x $$",
+    "덧셈정리": "$$ \\sin(a \\pm b) = \\sin a \\cos b \\pm \\cos a \\sin b \\quad \\cos(a \\pm b) = \\cos a \\cos b \\pm \\sin a \\sin b \\quad \\tan(a \\pm b) = \\frac{\\tan a \\pm \\tan b}{1 \\mp  \\tan a \\tan b}$$",   
+    "로그함수 적분" : "$$ \\int \\frac{1}{x} \\, dx = \\ln |x| + C $$",
+    "지수함수 적분": "$$ \\int e^x dx = e^x + C \\quad \\int a^x dx = \\frac{a^x}{\\ln a} + C$$",
+    "삼각함수 적분": "$$ \\int \\sin x dx = -\\cos x + C, \\quad \\int \\cos x, dx = \\sin x + C, \\quad \\int \\sec^2 x , dx = \\tan x + C$$",
+    "부분적분": "$$  \\int u, dv = uv - \\int v , du $$",
 
 };
 
