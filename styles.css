@@ -73,8 +73,9 @@ body {
     display: block;
     text-align: center;
     line-height: 100px;
-    color : black; : 40px
-    font size : 40px
+    color : black; 
+    font size : 40px; 
+    background-color: white;
 }
 
 .container2 {
@@ -84,12 +85,13 @@ body {
   gap: 15px;
 }
 
-.boxfox a:active{
-    display: block;
-    font size: 20px;
-    color: light gray;
-    padding: 10px;
-    text-align: center;
+.boxfox:not(.empty):active{
+    /* display: block; */
+    /* font size: 20px; */
+    /* color: light gray; */
+    /* padding: 10px; */
+    /* text-align: center; */
+    background-color: black;
     /* background-color: empty; */
 }
 
